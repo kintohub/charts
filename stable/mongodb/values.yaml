@@ -38,7 +38,7 @@ image:
 ## Enable authentication
 ## ref: https://docs.mongodb.com/manual/tutorial/enable-authentication/
 #
-usePassword: true
+usePassword: false
 # existingSecret: name-of-existing-secret
 
 ## MongoDB admin password
@@ -167,16 +167,11 @@ affinity: {}
 ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 tolerations: []
 
-## updateStrategy for MongoDB Primary, Secondary and Arbitrer statefulsets
-## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies
-updateStrategy:
-  type: RollingUpdate
-
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##
 persistence:
-  enabled: true
+  enabled: false
   ## A manually managed Persistent Volume and Claim
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
