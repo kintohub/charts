@@ -9,6 +9,7 @@ Expand the name of the chart.
 {{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+And depending on the resources the name is completed with an extension.
 If release name contains chart name it will be used as a full name.
 */}}
 {{- define "datadog.fullname" -}}
@@ -45,6 +46,17 @@ Return secret name to be used based on provided values.
 {{- define "datadog.appKeySecretName" -}}
 {{- $fullName := printf "%s-appkey" (include "datadog.fullname" .) -}}
 {{- default $fullName .Values.datadog.appKeyExistingSecret | quote -}}
+{{- end -}}
+
+{{/*
+Return secret name to be used based on provided values.
+*/}}
+{{- define "clusterAgent.tokenSecretName" -}}
+{{- if not .Values.clusterAgent.tokenExistingSecret -}}
+{{- include "datadog.fullname" . -}}-cluster-agent
+{{- else -}}
+{{- .Values.clusterAgent.tokenExistingSecret -}}
+{{- end -}}
 {{- end -}}
 
 {{/*

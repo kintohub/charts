@@ -3,6 +3,7 @@ apiVersion: {{ printf "%s/v1" (.Values.prometheusOperator.crdApiGroup | default 
 kind: ServiceMonitor
 metadata:
   name: {{ template "prometheus-operator.fullname" . }}-apiserver
+  namespace: {{ .Release.Namespace }}
   labels:
     app: {{ template "prometheus-operator.name" . }}-apiserver
 {{ include "prometheus-operator.labels" . | indent 4 }}
@@ -14,6 +15,10 @@ spec:
     {{- end }}
     port: https
     scheme: https
+{{- if .Values.kubeApiServer.serviceMonitor.metricRelabelings }}
+    metricRelabelings:
+{{ tpl (toYaml .Values.kubeApiServer.serviceMonitor.metricRelabelings | indent 6) . }}
+{{- end }}
 {{- if .Values.kubeApiServer.relabelings }}
     relabelings:
 {{ toYaml .Values.kubeApiServer.relabelings | indent 6 }}

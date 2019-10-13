@@ -3,6 +3,7 @@ apiVersion: {{ printf "%s/v1" (.Values.prometheusOperator.crdApiGroup | default 
 kind: ServiceMonitor
 metadata:
   name: {{ template "prometheus-operator.fullname" . }}-kube-etcd
+  namespace: {{ .Release.Namespace }}
   labels:
     app: {{ template "prometheus-operator.name" . }}-kube-etcd
 {{ include "prometheus-operator.labels" . | indent 4 }}
@@ -38,4 +39,12 @@ spec:
       {{- end}}
       insecureSkipVerify: {{ .Values.kubeEtcd.serviceMonitor.insecureSkipVerify }}
     {{- end }}
+{{- if .Values.kubeEtcd.serviceMonitor.metricRelabelings }}
+    metricRelabelings:
+{{ tpl (toYaml .Values.kubeEtcd.serviceMonitor.metricRelabelings | indent 4) . }}
+{{- end }}
+{{- if .Values.kubeEtcd.serviceMonitor.relabelings }}
+    relabelings:
+{{ toYaml .Values.kubeEtcd.serviceMonitor.relabelings | indent 4 }}
+{{- end }}
 {{- end }}
