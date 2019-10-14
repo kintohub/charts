@@ -22,6 +22,7 @@ spec:
       labels:
         app: {{ template "mongodb-replicaset.name" . }}
         release: {{ .Release.Name }}
+        type: cs
         workspace: {{ .Values.kinto.workspace }}
         blockName: {{ .Values.kinto.blockName }}
         envId: {{ .Values.kinto.envId }}
