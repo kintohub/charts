@@ -1,3 +1,10 @@
+#kintohub
+kinto:
+  workspace:
+  envId:
+  blockName:
+
+
 ## mysql image version
 ## ref: https://hub.docker.com/r/library/mysql/tags/
 ##
@@ -9,7 +16,7 @@ busybox:
   tag: "1.29.3"
 
 testFramework:
-  enabled: true
+  enabled: false
   image: "dduportal/bats"
   tag: "0.4.0"
 
