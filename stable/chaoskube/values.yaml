@@ -1,3 +1,8 @@
+kinto:
+  workspace:
+  envId:
+  blockName:
+
 # container name
 name: chaoskube
 
@@ -80,7 +85,9 @@ priorityClassName: ""
 
 # create service account with permission to list and kill pods
 rbac:
-  create: false
+  create:
+    role: true
+    clusterRole: false
 
   # only used when create is false
   serviceAccountName: default
