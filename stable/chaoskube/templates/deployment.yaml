@@ -34,7 +34,7 @@ spec:
             - --interval={{ .Values.interval }}
             - --labels={{ .Values.labels }}
             - --annotations={{ .Values.annotations }}
-            - --namespaces={{ .Values.namespaces }}
+            - --namespaces={{ .Release.namespace }}
             {{- if not .Values.dryRun }}
             - --no-dry-run
             {{- end }}
