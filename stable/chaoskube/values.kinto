@@ -1,0 +1,15 @@
+replicas=1
+interval=10m
+dryRun=true
+debug=false
+includedPodNames
+excludedPodNames
+excludedWeekdays
+excludedTimesOfDay
+excludedDaysOfYear
+timezone=UTC
+logFormat
+resources.limits.cpu=100m
+resources.limits.memory=128Mi
+resources.requests.cpu=100m
+resources.requests.memory=128Mi
