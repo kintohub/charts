@@ -537,6 +537,7 @@ prometheus:
 clusterDomain: cluster.local
 
 ## Pod Disruption Budget
-podDisruptionBudget:
-  maxUnavailable: 1
-  minAvailable: 1
+podDisruptionBudget: {}
+#  maxUnavailable: 1
+#  minAvailable: 1
+
