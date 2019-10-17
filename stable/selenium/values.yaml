@@ -1,3 +1,10 @@
+#kintohub
+kinto:
+  workspace:
+  envId:
+  blockName:
+
+
 global:
   ## NodeSelector to be used in every deployment
   ## hub, chrome, firefox, chromeDebug and firefoxDebug
