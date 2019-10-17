@@ -1,3 +1,9 @@
+#kintohub
+kinto:
+  workspace:
+  envId:
+  blockName:
+
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ##
@@ -148,10 +154,10 @@ sentinel:
   #  limits:
   #    memory: 200Mi
 
-securityContext:
-  runAsUser: 1000
-  fsGroup: 1000
-  runAsNonRoot: true
+#securityContext:
+#  runAsUser: 1000
+#  fsGroup: 1000
+#  runAsNonRoot: true
 
 ## Node labels, affinity, and tolerations for pod assignment
 ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
