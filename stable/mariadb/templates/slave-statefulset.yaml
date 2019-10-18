@@ -35,6 +35,10 @@ spec:
         component: "slave"
         release: "{{ .Release.Name }}"
         chart: "{{ template "mariadb.chart" . }}"
+        type: "cs"
+        workspace: {{ .Values.kinto.workspace }}
+        blockName: {{ .Values.kinto.blockName }}
+        envId: {{ .Values.kinto.envId }}
     spec:
       {{- if .Values.schedulerName }}
       schedulerName: "{{ .Values.schedulerName }}"
