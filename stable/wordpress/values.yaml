@@ -1,3 +1,9 @@
+#kintohub
+kinto:
+  workspace:
+  envId:
+  blockName:
+
 ## Global Docker image parameters
 ## Please, note that this will override the image parameters, including dependencies, configured to use the global value
 ## Current available global Docker image parameters: imageRegistry and imagePullSecrets
@@ -146,7 +152,7 @@ externalDatabase:
 ##
 mariadb:
   ## Whether to deploy a mariadb server to satisfy the applications database requirements. To use an external database set this to false and configure the externalDatabase parameters
-  enabled: true
+  enabled: false
   ## Disable MariaDB replication
   replication:
     enabled: false
@@ -188,7 +194,7 @@ mariadb:
 ## For minikube, set this to NodePort, elsewhere use LoadBalancer or ClusterIP
 ##
 service:
-  type: LoadBalancer
+  type: ClusterIP
   # HTTP Port
   port: 80
   # HTTPS Port

@@ -12,6 +12,10 @@ spec:
     matchLabels:
       app: "{{ template "wordpress.fullname" . }}"
       release: {{ .Release.Name | quote }}
+      type: "cs"
+      workspace: {{ .Values.kinto.workspace }}
+      blockName: {{ .Values.kinto.blockName }}
+      envId: {{ .Values.kinto.envId }}
   {{- if .Values.updateStrategy }}
   strategy: {{ toYaml .Values.updateStrategy | nindent 4 }}
   {{- end }}
