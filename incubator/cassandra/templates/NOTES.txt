@@ -1,7 +1,7 @@
 Cassandra CQL can be accessed via port {{ .Values.config.ports.cql }} on the following DNS name from within your cluster:
 Cassandra Thrift can be accessed via port {{ .Values.config.ports.thrift }} on the following DNS name from within your cluster:
 
-{{ template "cassandra.fullname" }}
+{{ template "cassandra.name" . }}
 
 {{- if not .Values.persistence.enabled }}
 
