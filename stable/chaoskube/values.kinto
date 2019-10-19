@@ -1,3 +1,4 @@
+imageTag=v0.14.0
 replicas=1
 interval=10m
 dryRun=true
