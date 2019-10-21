@@ -1,0 +1,7 @@
+image.repo=cassandra
+image.tag=3.11.3
+persistence.enabled=true
+persistence.size=10Gi
+config.cluster_size=3
+resources.limits.memory: 4Gi
+resources.limits.cpu: 1
