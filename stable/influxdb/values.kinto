@@ -1,0 +1,9 @@
+image.repository=influxdb
+image.tag=1.7.6-alpine
+persistence.enabled=true
+persistence.size=8Gi
+setDefaultUser.enabled=true
+setDefaultUser.user.username=admin
+setDefaultUser.user.password=coolpass
+resources.limits.memory: 4Gi
+resources.limits.memory.cpu 1
