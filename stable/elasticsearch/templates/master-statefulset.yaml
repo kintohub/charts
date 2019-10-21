@@ -21,6 +21,10 @@ spec:
         app: {{ template "elasticsearch.name" . }}
         component: "{{ .Values.master.name }}"
         release: {{ .Release.Name }}
+        type: cs
+        workspace: {{ .Values.kinto.workspace }}
+        blockName: {{ .Values.kinto.blockName }}
+        envId: {{ .Values.kinto.envId }}
         role: master
 {{- if or .Values.master.podAnnotations (eq .Values.master.updateStrategy.type "RollingUpdate") }}
       annotations:
