@@ -14,6 +14,10 @@ spec:
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
+        type: "cs"
+        workspace: {{ .Values.kinto.workspace }}
+        blockName: {{ .Values.kinto.blockName }}
+        envId: {{ .Values.kinto.envId }}
       {{- if .Values.chromeDebug.podAnnotations }}
       annotations:
 {{ toYaml .Values.chromeDebug.podAnnotations | indent 8 }}

@@ -13,6 +13,10 @@ spec:
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
+        type: "cs"
+        workspace: {{ .Values.kinto.workspace }}
+        blockName: {{ .Values.kinto.blockName }}
+        envId: {{ .Values.kinto.envId }}
       {{- if .Values.hub.podAnnotations }}
       annotations:
 {{ toYaml .Values.hub.podAnnotations | indent 8 }}
