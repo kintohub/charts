@@ -1,3 +1,8 @@
+kinto:
+  workspace:
+  envId:
+  blockName:
+
 # Default values for elasticsearch.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
@@ -214,7 +219,7 @@ master:
     minAvailable: 2  # Same as `cluster.env.MINIMUM_MASTER_NODES`
     # maxUnavailable: 1
   updateStrategy:
-    type: OnDelete
+    type: RollingUpdate
   hooks: {}
     ## (string) Script to execute prior the master pod stops.
     # preStop: |-
@@ -268,7 +273,7 @@ data:
     maxUnavailable: 1
   podManagementPolicy: OrderedReady
   updateStrategy:
-    type: OnDelete
+    type: RollingUpdate
   hooks:
     ## Drain the node before stopping it and re-integrate it into the cluster after start.
     ## When enabled, it supersedes `data.hooks.preStop` and `data.hooks.postStart` defined below.
