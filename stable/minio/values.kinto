@@ -1,0 +1,22 @@
+image.tag=RELEASE.2019-08-07T01-59-21Z
+persistence.size=10Gi
+persistence.enabled=true
+s3gateway.enabled=false
+s3gateway.replicas=3
+s3gateway.serviceEndpoint
+azuregateway.enabled=false
+azuregateway.replicas=3
+gcsgateway.enabled=false
+gcsgateway.replicas=3
+gcsgateway.gcsKeyJson
+gcsgateway.projectId
+ossgateway.enabled=false
+ossgateway.replicas=3
+ossgateway.endpointURL
+environment.MINIO_BROWSER=on
+environment.MINIO_ACCESS_KEY=coolkey
+environment.MINIO_SECRET_KEY=coolsecret
+environment.MINIO_CACHE_EXCLUDE
+environment.MINIO_CACHE_EXPIRY
+resources.limits.memory: 512Mi
+resources.limits.cpu: 500m
