@@ -1,3 +1,9 @@
+#kintohub
+kinto:
+  workspace:
+  envId:
+  blockName:
+
 ## Cassandra image version
 ## ref: https://hub.docker.com/r/library/cassandra/
 image:
@@ -127,7 +133,7 @@ podDisruptionBudget: {}
 
 podManagementPolicy: OrderedReady
 updateStrategy:
-  type: OnDelete
+  type: RollingUpdate
 
 ## Pod Security Context
 securityContext:
@@ -212,7 +218,7 @@ backup:
 ## ref: https://github.com/criteo/cassandra_exporter
 exporter:
   # If exporter is enabled this will create a ServiceMonitor by default as well
-  servicemonitor: true
+  servicemonitor: false
   enabled: false
   image:
     repo: criteord/cassandra_exporter
