@@ -1,0 +1,17 @@
+image.repository=bitnami/nats
+image.tag=2.1.0-debian-9-r0
+replicaCount=1
+auth.enabled=true
+auth.user=nats_user
+auth.password=undefined
+auth.token=undefined
+clusterAuth.enabled=true
+clusterAuth.user=nats_cluster
+clusterAuth.password=undefined
+clusterAuth.token=undefined
+maxConnections=100
+maxControlLine=512
+maxPayload=65536
+writeDeadline=2s
+resources.limits.cpu: 500m
+resources.limits.memory: 512Mi
