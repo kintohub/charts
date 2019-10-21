@@ -1,4 +1,4 @@
-replicaCount=2
+replicaCount=1
 image.tag=1.6-p1
 credentials.superuser=tea
 credentials.admin=cola
