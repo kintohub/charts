@@ -1,0 +1,18 @@
+hub.image=selenium/hub
+hub.tag=3.141.59
+chrome.enabled=false
+chrome.replicas=1
+chrome.resources.limits.cpu: ".5"
+chrome.resources.limits.memory: "1000Mi"
+chromeDebug.enabled=false
+chromeDebug.replicas=1
+chromeDebug.resources.limits.cpu: ".5"
+chromeDebug.resources.limits.memory: "1500Mi"
+firefox.enabled=false
+firefox.replicas=1
+firefox.resources.limits.cpu: ".5"
+firefox.resources.limits.memory: "1000Mi"
+firefoxDebug.enabled=false
+firefoxDebug.replicas=1
+firefoxDebug.resources.limits.cpu: ".5"
+firefoxDebug.resources.limits.memory: "1500Mi"
