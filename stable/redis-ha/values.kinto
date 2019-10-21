@@ -1,0 +1,15 @@
+image.repository=redis
+image.tag=5.0.5-alpine
+replicas=3
+auth=false
+redisPassword
+persistentVolume.enabled=false
+persistentVolume.size=10Gi
+redis.resources.requests.memory: 200Mi
+redis.resources.requests.cpu: 100m
+redis.resources.limits.memory: 700Mi
+redis.resources.limits.cpu: 500m
+sentinel.resources.requests.memory: 200Mi
+sentinel.resources.requests.cpu: 100m
+sentinel.resources.limits.memory: 700Mi
+sentinel.resources.limits.cpu: 500m
