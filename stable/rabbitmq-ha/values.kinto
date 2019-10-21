@@ -1,0 +1,10 @@
+image.repository=rabbitmq
+image.tag=3.7.19-alpine
+definitions.users={"name":"myUsername", "password":"myPassword", "tags": "administrator"}
+rabbitmqMemoryHighWatermark=256MB
+rabbitmqMemoryHighWatermarkType=absolute
+replicaCount=3
+persistentVolume.enabled=false
+persistentVolume.size=8Gi
+resources.limits.cpu: 100m
+resources.limits.memory: 1Gi

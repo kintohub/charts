@@ -1,3 +1,9 @@
+#kintohub
+kinto:
+  workspace:
+  envId:
+  blockName:
+
 ## RabbitMQ application credentials
 ## Ref: http://rabbitmq.com/access-control.html
 ##
@@ -317,7 +323,7 @@ podManagementPolicy: OrderedReady
 ## Statefulsets rolling update update strategy
 ## Ref: https://kubernetes.io/docs/tutorials/stateful-application/basic-stateful-set/#rolling-update
 ##
-updateStrategy: OnDelete
+updateStrategy: RollingUpdate
 
 ## Statefulsets Pod Priority
 ## Ref: https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass
@@ -465,11 +471,11 @@ existingSecret: ""
 
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 ##
-securityContext:
-  fsGroup: 101
-  runAsGroup: 101
-  runAsNonRoot: true
-  runAsUser: 100
+#securityContext:
+#  fsGroup: 101
+#  runAsGroup: 101
+#  runAsNonRoot: true
+#  runAsUser: 100
 
 ## Sets environment variables for the rabbitmq container
 env: {}
@@ -501,7 +507,7 @@ prometheus:
   ## Prometheus is using Operator.  Setting to true will create Operator specific resources like ServiceMonitors and Alerts
   operator:
     ## Are you using Prometheus Operator? [Blog Post](https://coreos.com/blog/the-prometheus-operator.html)
-    enabled: true
+    enabled: false
 
     ## Configures Alerts, which will be setup via Prometheus Operator / ConfigMaps.
     alerts:
@@ -532,5 +538,6 @@ clusterDomain: cluster.local
 
 ## Pod Disruption Budget
 podDisruptionBudget: {}
-  # maxUnavailable: 1
-  # minAvailable: 1
+#  maxUnavailable: 1
+#  minAvailable: 1
+
