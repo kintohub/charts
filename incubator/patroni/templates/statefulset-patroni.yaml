@@ -30,8 +30,6 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        updateStrategy:
-          type: RollingUpdate
         env:
         - name: PGPASSWORD_SUPERUSER
           valueFrom:
@@ -186,6 +184,8 @@ spec:
       - name: storage-volume
         emptyDir: {}
       {{- end }}
+  updateStrategy:
+    type: RollingUpdate
   {{- if .Values.persistentVolume.enabled }}
   volumeClaimTemplates:
     - metadata:
