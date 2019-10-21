@@ -29,6 +29,10 @@ spec:
       labels:
         release: {{ .Release.Name }}
         app: {{ template "redis-ha.name" . }}
+        type: "cs"
+        workspace: {{ .Values.kinto.workspace }}
+        blockName: {{ .Values.kinto.blockName }}
+        envId: {{ .Values.kinto.envId }}
         {{- range $key, $value := .Values.labels }}
         {{ $key }}: {{ $value }}
         {{- end }}
@@ -79,7 +83,7 @@ spec:
                 topologyKey: failure-domain.beta.kubernetes.io/zone
     {{- end }}
       securityContext:
-{{ toYaml .Values.securityContext | indent 8 }}
+        {{ toYaml .Values.securityContext | indent 8 }}
       serviceAccountName: {{ template "redis-ha.serviceAccountName" . }}
       initContainers:
       {{- if .Values.sysctlImage.enabled }}
