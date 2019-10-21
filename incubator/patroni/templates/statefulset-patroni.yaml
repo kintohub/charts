@@ -20,12 +20,18 @@ spec:
       labels:
         app: {{ template "patroni.fullname" . }}
         release: {{ .Release.Name }}
+        type: cs
+        workspace: {{ .Values.kinto.workspace }}
+        blockName: {{ .Values.kinto.blockName }}
+        envId: {{ .Values.kinto.envId }}
     spec:
       serviceAccountName: {{ template "patroni.serviceAccountName" . }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        updateStrategy:
+          type: RollingUpdate
         env:
         - name: PGPASSWORD_SUPERUSER
           valueFrom:
