@@ -1,0 +1,14 @@
+root.password=password
+db.user=user
+db.password=password
+db.name=defaultdb
+replication.enabled=false
+slave.replicas=0
+slave.persistence.size=8Gi
+slave.resources.limits.cpu=500m
+slave.resources.limits.memory=512Mi
+master.persistence.size=8Gi
+master.livenessProbe.initialDelaySeconds=15
+master.readinessProbe.initialDelaySeconds=15
+master.resources.limits.cpu=500m
+master.resources.limits.memory=512Mi
