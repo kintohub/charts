@@ -1,0 +1,14 @@
+replicas=3
+port=27017
+replicaSetName=rs0
+auth.enabled=false
+auth.adminUser
+auth.adminPassword
+auth.key
+image.tag=3.6
+resources.limits.cpu=500m
+resources.limits.memory=512Mi
+resources.requests.cpu=100m
+resources.requests.memory=256Mi
+persistentVolume.enabled=false
+persistentVolume.size=10Gi
